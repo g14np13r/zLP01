@@ -492,7 +492,13 @@ public class IU extends javax.swing.JFrame {
     }//GEN-LAST:event_memoryActionPerformed
 
     private void porcentageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porcentageActionPerformed
-    
+        Double porcentage;
+        if(numero1.equals("")){
+        } 
+        else{
+            porcentage = (Double.parseDouble(numero1)/100)*Double.parseDouble(pantalla.getText());
+            pantalla.setText(porcentage.toString());
+        }
     }//GEN-LAST:event_porcentageActionPerformed
 
     private void ENActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENActionPerformed
