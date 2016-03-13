@@ -134,6 +134,7 @@ public class IU extends javax.swing.JFrame {
             }
         });
 
+        igual.setBackground(new java.awt.Color(102, 153, 0));
         igual.setText("=");
         igual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,12 +150,27 @@ public class IU extends javax.swing.JFrame {
         });
 
         menos.setText("-");
+        menos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menosActionPerformed(evt);
+            }
+        });
 
         por.setText("x");
+        por.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                porActionPerformed(evt);
+            }
+        });
 
-        dividir.setText("/");
+        dividir.setText("÷");
+        dividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dividirActionPerformed(evt);
+            }
+        });
 
-        delete.setText("<|x|");
+        delete.setText("<[x]");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
@@ -176,8 +192,18 @@ public class IU extends javax.swing.JFrame {
         });
 
         memory.setText("M");
+        memory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memoryActionPerformed(evt);
+            }
+        });
 
-        negative.setText("+");
+        negative.setText("±");
+        negative.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                negativeActionPerformed(evt);
+            }
+        });
 
         Raíz.setText("√ ");
         Raíz.addActionListener(new java.awt.event.ActionListener() {
@@ -187,8 +213,18 @@ public class IU extends javax.swing.JFrame {
         });
 
         porcentage.setText("%");
+        porcentage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                porcentageActionPerformed(evt);
+            }
+        });
 
         EN.setText("1/x");
+        EN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ENActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -395,18 +431,81 @@ public class IU extends javax.swing.JFrame {
     }//GEN-LAST:event_ClearActionPerformed
 
     private void másActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_másActionPerformed
-           
+        if (!pantalla.getText().equals("")) {
+        numero1=pantalla.getText();
+        signo="+";
+        pantalla.setText("");
+    }
     }//GEN-LAST:event_másActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        
+        String resultado;
+        numero2=pantalla.getText();
+      
+        if (!numero2.equals("")) {
+            resultado=calculadora(numero1,numero2,signo);
+            pantalla.setText(resultado);
+        }
     }//GEN-LAST:event_igualActionPerformed
 
     private void ClearErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearErrorActionPerformed
-        // TODO add your handling code here:
         pantalla.setText("");
         
     }//GEN-LAST:event_ClearErrorActionPerformed
+
+    private void menosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menosActionPerformed
+        if (!pantalla.getText().equals("")) {
+            numero1=pantalla.getText();
+            signo="-";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_menosActionPerformed
+
+    private void porActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porActionPerformed
+         if (!pantalla.getText().equals("")) {
+            numero1=pantalla.getText();
+            signo="*";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_porActionPerformed
+
+    private void dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividirActionPerformed
+        if (!pantalla.getText().equals("")) {
+            numero1=pantalla.getText();
+            signo="/";
+            pantalla.setText("");
+        }
+    }//GEN-LAST:event_dividirActionPerformed
+
+    private void negativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negativeActionPerformed
+        Double num;
+        String campo;
+        campo=pantalla.getText();
+        if (campo.length()>0) {
+            num=(-1)*Double.parseDouble(campo);
+            pantalla.setText(num.toString());
+        }
+    }//GEN-LAST:event_negativeActionPerformed
+
+    private void memoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memoryActionPerformed
+
+    private void porcentageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porcentageActionPerformed
+    
+    }//GEN-LAST:event_porcentageActionPerformed
+
+    private void ENActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENActionPerformed
+        String campo;
+        Double num;
+        campo=pantalla.getText();
+        if (campo.length()>0) {
+            num=1/(Double.parseDouble(campo));
+            pantalla.setText(num.toString());
+            
+            
+        }
+    }//GEN-LAST:event_ENActionPerformed
     
     public static boolean punto (String cadena){
     boolean resultado;
