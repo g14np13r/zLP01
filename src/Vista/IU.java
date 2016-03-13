@@ -507,6 +507,29 @@ public class IU extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ENActionPerformed
     
+    public static String calculadora (String memoria1,String memoria2,String signo){
+    Double resultado=0.0;
+    String respuesta;
+    
+    if (signo.equals("-")) {
+        resultado = Double.parseDouble(memoria1) - Double.parseDouble(memoria2);
+     
+       }
+    if (signo.equals("+")) {
+        resultado= Double.parseDouble(memoria1) + Double.parseDouble(memoria2);
+    }
+    
+     if (signo.equals("*")) {
+        resultado= Double.parseDouble(memoria1) * Double.parseDouble(memoria2);
+    }
+     
+      if (signo.equals("/")) {
+        resultado= Double.parseDouble(memoria1) / Double.parseDouble(memoria2);
+    }
+      respuesta=resultado.toString();
+      return respuesta;
+    }
+    
     public static boolean punto (String cadena){
     boolean resultado;
     resultado = false;
