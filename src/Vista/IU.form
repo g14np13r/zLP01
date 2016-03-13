@@ -39,8 +39,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="pantalla" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="B0" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
@@ -93,10 +94,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="dividir" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="pantalla" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="memory" min="-2" pref="46" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Remember" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="memory" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="negative" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Raíz" min="-2" pref="46" max="-2" attributes="0"/>
@@ -116,12 +119,18 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="pantalla" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="memory" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="EN" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="porcentage" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="Raíz" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="negative" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="EN" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="porcentage" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="Raíz" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="negative" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="memory" min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Remember" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -361,6 +370,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ENActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Remember">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="R"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RememberActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
