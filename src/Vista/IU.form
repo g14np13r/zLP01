@@ -260,11 +260,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="="/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="igualActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="m&#xe1;s">
           <Properties>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="m&#xe1;sActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="menos">
           <Properties>
@@ -293,11 +299,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="C"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="ClearError">
           <Properties>
             <Property name="text" type="java.lang.String" value="CE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearErrorActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="memory">
           <Properties>

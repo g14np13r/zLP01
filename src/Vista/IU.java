@@ -3,7 +3,9 @@ package Vista;
 
 
 public class IU extends javax.swing.JFrame {
-
+    String numero1;
+    String signo;
+    String numero2;
     /**
      * Creates new form IU
      */
@@ -133,8 +135,18 @@ public class IU extends javax.swing.JFrame {
         });
 
         igual.setText("=");
+        igual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                igualActionPerformed(evt);
+            }
+        });
 
         más.setText("+");
+        más.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                másActionPerformed(evt);
+            }
+        });
 
         menos.setText("-");
 
@@ -150,8 +162,18 @@ public class IU extends javax.swing.JFrame {
         });
 
         Clear.setText("C");
+        Clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearActionPerformed(evt);
+            }
+        });
 
         ClearError.setText("CE");
+        ClearError.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearErrorActionPerformed(evt);
+            }
+        });
 
         memory.setText("M");
 
@@ -342,7 +364,16 @@ public class IU extends javax.swing.JFrame {
     }//GEN-LAST:event_B9ActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
-        // TODO add your handling code here:
+        String campo;
+        campo = pantalla.getText();
+        if (campo.length()<=0) {
+            pantalla.setText("0.");
+        }
+        else {
+            if (!punto (pantalla.getText())) {
+                pantalla.setText(pantalla.getText()+".");
+            }
+        }
     }//GEN-LAST:event_puntoActionPerformed
 
     private void RaízActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaízActionPerformed
@@ -356,9 +387,40 @@ public class IU extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_RaízActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
+        pantalla.setText("");
+        numero1 = "";
+        numero2 = "";
+        signo = "";
+    }//GEN-LAST:event_ClearActionPerformed
+
+    private void másActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_másActionPerformed
+           
+    }//GEN-LAST:event_másActionPerformed
+
+    private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
+        
+    }//GEN-LAST:event_igualActionPerformed
+
+    private void ClearErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearErrorActionPerformed
+        // TODO add your handling code here:
+        pantalla.setText("");
+        
+    }//GEN-LAST:event_ClearErrorActionPerformed
+    
+    public static boolean punto (String cadena){
+    boolean resultado;
+    resultado = false;
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.substring(i,i+1).equals(".")) {
+                resultado=true;
+                break ;
+            }
+            
+        }
+        return resultado;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
